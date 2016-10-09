@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apply: false
+  shop: one
+  place: one
+
+two:
+  apply: false
+  shop: two
+  place: two

@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  mon1: false
+  mon2: false
+  tue1: false
+  tue2: false
+  wed1: false
+  wed2: false
+  thu1: false
+  thu2: false
+  fri1: false
+  fri2: false
+  sat1: false
+  sat2: false
+  sun1: false
+  sun2: false
+  hol1: false
+  hol2: false
+  price: 1
+  url: MyString
+
+two:
+  name: MyString
+  mon1: false
+  mon2: false
+  tue1: false
+  tue2: false
+  wed1: false
+  wed2: false
+  thu1: false
+  thu2: false
+  fri1: false
+  fri2: false
+  sat1: false
+  sat2: false
+  sun1: false
+  sun2: false
+  hol1: false
+  hol2: false
+  price: 1
+  url: MyString

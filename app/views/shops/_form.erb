@@ -1,0 +1,30 @@
+<%= form_for @shop do |f| %>
+  <% if @shop.errors.any? %>
+    <% @shop.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  <% end %>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div>
+    <%= f.label :place %>
+    <% @places.each do |place| %>
+      <li>
+      <%= place.id %> <%= place.name %>
+      </li>
+    <% end %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
