@@ -1,26 +1,27 @@
 <h3>All Shops</h3>
 <%= link_to "店舗追加", new_shop_path %>
-<% if !@shops.empty? %>
+<% unless @shops.empty? %>
   <table>
     <thead>
       <tr>
         <th>店名</th>
         <th>小・値段</th>
+        <th>URL</th>
         <th>更新</th>
         <th>削除</th>
       </tr>
     </thead>
     <tbody>
-    <% @shops.each do |shop| %>
-      <tr>
-        <a href="<%= shop.url %>">
+      <% @shops.each do |shop| %>
+        <tr>
           <td><%= shop.name %></td>
           <td><%= shop.price %></td>
-        </a>
-        <td><%= link_to "更新", edit_shop_path(shop.id) %></td>
-        <td><%= link_to "削除", shop_path(shop.id), method: :delete, 
-        data: {confirm: "削除してよろしいですか？"} %></td>
-      </tr>
-    <% end %>
+          <td><%= link_to "リンク", shop.url %></td>
+          <td><%= link_to "更新", edit_shop_path(shop.id) %></td>
+          <td><%= link_to "削除", shop_path(shop.id), method: :delete,
+          data: {confirm: "削除してよろしいですか？"} %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% end %>

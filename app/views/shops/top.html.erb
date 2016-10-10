@@ -1,0 +1,45 @@
+<h3>検索画面</h3>
+
+<%= form_for @search, url: '/shops/search', method: :post do |f| %>
+  <%# 日付 %>
+  <p>
+    <%= f.label :date , '来訪日:' %><br>
+    <%= f.text_field :date %>
+  </p>
+
+  <%# 昼・夜 %>
+  <p>
+    <%= f.label :time, '昼・夜:' %><br>
+    <%= f.radio_button :time, '1', {:checked => @search.time == '1'} %>昼の部<br>
+    <%= f.radio_button :time, '2', {:checked => @search.time == '2'} %>夜の部<br>
+  </p>
+  <p>
+    <%= f.submit '検索' %>
+  </p>
+
+  <%# 店舗一覧 %>
+  <% unless @shops.nil? %>
+    <% if @shops.count == 0 %>
+      <p>店舗が見つかりません</p>
+    <% else %>
+      <table>
+        <thead>
+          <tr>
+            <th>店名</th>
+            <th>小・値段</th>
+            <th>URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @shops.each do |shop| %>
+            <tr>
+              <td><%= shop.name %></td>
+              <td><%= shop.price %>円</td>
+              <td><%= link_to "リンク", shop.url %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  <% end %>
+<% end %>

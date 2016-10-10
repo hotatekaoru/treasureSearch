@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161009134220) do
+ActiveRecord::Schema.define(version: 20161010065635) do
 
   create_table "places", force: :cascade do |t|
     t.string   "name"
@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 20161009134220) do
   end
 
   create_table "shop_places", force: :cascade do |t|
-    t.boolean  "apply",      default: false
-    t.integer  "shop_id"
-    t.integer  "place_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.index ["place_id"], name: "index_shop_places_on_place_id"
-    t.index ["shop_id"], name: "index_shop_places_on_shop_id"
+    t.boolean  "apply"
+    t.integer  "shops_id"
+    t.integer  "places_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["places_id"], name: "index_shop_places_on_places_id"
+    t.index ["shops_id"], name: "index_shop_places_on_shops_id"
   end
 
   create_table "shops", force: :cascade do |t|

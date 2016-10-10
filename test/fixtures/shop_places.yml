@@ -2,10 +2,10 @@
 
 one:
   apply: false
-  shop: one
-  place: one
+  shops: one
+  places: one
 
 two:
   apply: false
-  shop: two
-  place: two
+  shops: two
+  places: two
