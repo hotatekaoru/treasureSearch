@@ -17,7 +17,7 @@ development:
   host: localhost
   encoding: utf8
   database: psgr_db
-  username: postgres
+  username: postgresql
   password: postgres
   pool: 5
   timeout: 5000

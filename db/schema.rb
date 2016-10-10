@@ -10,23 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010065635) do
+ActiveRecord::Schema.define(version: 20161008122518) do
 
-  create_table "places", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shop_places", force: :cascade do |t|
-    t.boolean  "apply"
-    t.integer  "shops_id"
-    t.integer  "places_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["places_id"], name: "index_shop_places_on_places_id"
-    t.index ["shops_id"], name: "index_shop_places_on_shops_id"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "shops", force: :cascade do |t|
     t.string   "name"

@@ -68,11 +68,11 @@ class ShopsController < ApplicationController
     d = Date.strptime(@search.date, "%Y-%m-%d")
     str = ""
     if HolidayJp.holiday?(d)
-      str = "hol" + @search.time.to_s
+      str = "hol" + @search.time.to_s + ' = TRUE'
     else
-      str = wdays[d.wday] + @search.time.to_s
+      str = wdays[d.wday] + @search.time.to_s + ' = TRUE'
     end
-    Shop.where('? IS TRUE', str).order('id')
+    Shop.where(str).order('id')
   end
 
   def find_shop
